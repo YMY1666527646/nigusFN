@@ -1,7 +1,20 @@
 # onetap.win
-Fortnite External Cheat, Currently Undetected on EAC
+Fortnite External Cheat, Currently Undetected on EAC, can be ud on both ac's but u need to get better drivers!
 
 
-Coded by - Trixy#1337 & wish#1111
+Coded by - machinetherapist#1337 & skidseal#1337
 
-**Feel free to use it!**
+creds;
+
+menu - machinetherapist + some fixes
+
+code - skidseal
+
+```
+mov eax 1337, push eax
+0x00001337
+```
+
+**Feel free to use it! But atleast credit us both. (For hard work)**
+
+* if u're micca u should credit me aswell for this menu.
