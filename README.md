@@ -17,4 +17,3 @@ mov eax 1337, push eax
 
 **Feel free to use it! But atleast credit us both. (For hard work)**
 
-* if u're micca u should credit me aswell for this menu.
