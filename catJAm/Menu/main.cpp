@@ -30,7 +30,7 @@
 #include <chrono>
 #include <random>
 
-#include "main header.h"
+
 #include "../xorstr.h"
 
 
@@ -1290,80 +1290,39 @@ void render() {
 	if (menu_key)
 	{
 
-		auto& style = ImGui::GetStyle();
-
-
-
-
-		style.Colors[ImGuiCol_TitleBg] = ImColor(227, 0, 40, 255);
-		style.Colors[ImGuiCol_TitleBgActive] = ImColor(227, 0, 40, 255);
-		style.Colors[ImGuiCol_TitleBgCollapsed] = ImColor(15, 15, 15, 50);
-
-		style.Colors[ImGuiCol_Border] = ImColor(0, 0, 0, 0);
-		style.Colors[ImGuiCol_WindowBg] = ImColor(12, 12, 12, 255);
-
-		style.Colors[ImGuiCol_Button] = ImColor(24, 25, 24, 255);
-		style.Colors[ImGuiCol_ButtonActive] = ImColor(44, 44, 44, 255);
-		style.Colors[ImGuiCol_ButtonHovered] = ImColor(44, 44, 44, 255);
-
-		style.Colors[ImGuiCol_CheckMark] = ImColor(255, 255, 255, 255);
-
-		style.Colors[ImGuiCol_FrameBg] = ImColor(36, 37, 36, 255);
-		style.Colors[ImGuiCol_FrameBgActive] = ImColor(36, 37, 36, 255);
-		style.Colors[ImGuiCol_FrameBgHovered] = ImColor(36, 37, 36, 255);
-
-		style.Colors[ImGuiCol_Header] = ImColor(54, 56, 54, 255);			// for collapsing headers , etc
-		style.Colors[ImGuiCol_HeaderActive] = ImColor(54, 56, 54, 255);
-		style.Colors[ImGuiCol_HeaderHovered] = ImColor(54, 56, 54, 255);
-
-		style.Colors[ImGuiCol_ResizeGrip] = ImColor(51, 49, 50, 255);		    // the resize grip thing bottom right
-		style.Colors[ImGuiCol_ResizeGripActive] = ImColor(54, 53, 55);			// when you hold it / active
-		style.Colors[ImGuiCol_ResizeGripHovered] = ImColor(51, 49, 50, 255);			// when you hover over it
-
-		style.Colors[ImGuiCol_SliderGrab] = ImColor(249, 79, 49, 255);
-		style.Colors[ImGuiCol_SliderGrabActive] = ImColor(249, 79, 49, 255);
-		// 54 , 56, 54 , 255
-		style.Colors[ImGuiCol_Border] = ImColor(54, 54, 54);
-		style.Colors[ImGuiCol_Separator] = ImColor(54, 54, 54);
-		style.Colors[ImGuiCol_SeparatorActive] = ImColor(54, 54, 54);
-		style.Colors[ImGuiCol_SeparatorHovered] = ImColor(54, 54, 54);
+			
+		ImGui::StyleColorsClassic();
 
 		static const char* MouseKeys[]{ "Right Mouse","Left Mouse","Control","Shift","Alt","Tab","Mouse3","Mouse4","Z Key","X Key","C Key","V Key" };
 		static int KeySelected = 0;
 
-		if (ImGui::Begin(("                             beamed.win @ FORTNITE "), 0, ImGuiWindowFlags_::ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_::ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoSavedSettings))
-			ImGui::SetNextWindowSize(ImVec2({ 607, 500 }), ImGuiSetCond_FirstUseEver); {
-			ImGui::SetWindowSize(ImVec2(607, 500));
-			ImGui::Text("Softaim");
-			ImGui::Checkbox(("Enable Aimbot"), &item.Aimbot);
-			ImGui::Checkbox(("Vis Check"), &item.VisableCheck);
-			ImGui::SliderFloat(("FOV"), &item.AimFOV, 20, 250);
-			ImGui::SliderFloat(("Smooth X"), &item.Aim_SpeedX, 2, 25);
-			ImGui::SliderFloat(("Smooth Y"), &item.Aim_SpeedY, 2, 25);
-			ImGui::Text((E("Aim Key: ")));
-			HotkeyButton(hotkeys::aimkey, ChangeKey, keystatus);
+		/* nigusfn remake by machineterapist */
+		if (ImGui::Begin(("                          pasta nigosFN x2"), 0, ImGuiWindowFlags_::ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_::ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoSavedSettings))
+			ImGui::SetNextWindowSize(ImVec2({ 607, 500 }), ImGuiSetCond_FirstUseEver); {/* nigusfn remake by machineterapist */
+			ImGui::SetWindowSize(ImVec2(607, 500));/* nigusfn remake by machineterapist */
+			ImGui::Text("Softaim");/* nigusfn remake by machineterapist */
+			ImGui::Checkbox(("Mouse Aimbot"), &item.Aimbot);/* nigusfn remake by machineterapist */
+			ImGui::Checkbox(("Visible Check"), &item.VisableCheck);/* nigusfn remake by machineterapist */
+			ImGui::SliderFloat(("Radius"), &item.AimFOV, 20, 250);/* nigusfn remake by machineterapist */
+			ImGui::SliderFloat(("Smoothing X"), &item.Aim_SpeedX, 2, 25);/* nigusfn remake by machineterapist */
+			ImGui::SliderFloat(("Smoothing Y"), &item.Aim_SpeedY, 2, 25);/* nigusfn remake by machineterapist */
 
-			ImGui::Text("Esp");
-			ImGui::Checkbox(" Enable Box", &item.Esp_box);
-			ImGui::Checkbox(("Enable Lock Line"), &item.Locl_line);
-			ImGui::Checkbox(("Enable Skeletons"), &item.skeleton);
-			ImGui::Checkbox(("Enable Lines"), &item.Esp_line);
+			ImGui::Text("Esp");/* nigusfn remake by machineterapist */
+			ImGui::Checkbox(" Box", &item.Esp_box);/* nigusfn remake by machineterapist */
+			ImGui::Checkbox(("Lock Line"), &item.Locl_line);/* nigusfn remake by machineterapist */
+			ImGui::Checkbox(("Skeletons"), &item.skeleton);/* nigusfn remake by machineterapist */
+			ImGui::Checkbox(("Lines"), &item.Esp_line);/* nigusfn remake by machineterapist */
 
-			if (item.Esp_box) {
-				ImGui::Combo(("Box Type"), &esp_mode, esp_modes, sizeof(esp_modes) / sizeof(*esp_modes));
-			}
-			ImGui::Text("Exploits");
-			ImGui::Checkbox(("Enable Insta-Res"), &item.instant_res);
-			ImGui::Checkbox(("Enable Ads-Air"), &item.aiminair);
-			ImGui::Checkbox(("Enable Rapid-Fire"), &item.Rapidfire);
-			ImGui::Checkbox(("Enable FOV-Changer"), &item.FOVChanger);
-			ImGui::SliderFloat(("Rapid Fire Value"), &item.RapidFireValue, 1, 360);
-			ImGui::SliderFloat("Res Speed", &item.InstantReviveValue, 0, 10);
-
+			if (item.Esp_box) {/* nigusfn remake by machineterapist */
+				ImGui::Combo(("Box Type"), &esp_mode, esp_modes, sizeof(esp_modes) / sizeof(*esp_modes));/* nigusfn remake by machineterapist */
+			}/* nigusfn remake by machineterapist */
+			
+			ImGui::Text((E("Aim Key: ")));/* nigusfn remake by machineterapist */
+			HotkeyButton(hotkeys::aimkey, ChangeKey, keystatus);/* nigusfn remake by machineterapist */
 		}
-
+/* nigusfn remake by machineterapist */
 		ImGui::End();
-
+/* nigusfn remake by machineterapist */
 	}
 
 		ImGui::EndFrame();
