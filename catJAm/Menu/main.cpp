@@ -31,10 +31,6 @@
 #include <random>
 
 
-#include "../xorstr.h"
-
-
-
 namespace offests {
 
 	static ULONG64 offset_uworld;
@@ -1492,56 +1488,6 @@ void SetWindowToTarget()
 	}
 }
 
-void damoScan() {
-	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | FOREGROUND_GREEN);
-	std::cout << xorstr("\n\n scanning be/eac...");
-	Sleep(1500);
-	if (damoScan) {
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | FOREGROUND_RED);
-
-		std::cout << _xor_(" banned by battleye; 27.12.2021_17:46") << "\n";
-		std::cout << _xor_("\n\n") << "\n";
-		std::cout << _xor_("     +--^----------,--------,-----,--------^-,") << "\n";
-		std::cout << _xor_("     | |||||||||   `--------'     |          O      ");
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | FOREGROUND_GREEN);
-		std::cout << _xor_("| Tapped by BE [*] >") << "\n";
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | FOREGROUND_RED);
-		std::cout << _xor_("     `+---------------------------^----------|") << "\n";
-		std::cout << _xor_("       `\_,---------,---------,--------------'") << "\n";
-		std::cout << _xor_("         / XXXXXX /'|       /'") << "\n";
-		std::cout << _xor_("        / XXXXXX /  `\\    /'") << "\n";
-		std::cout << _xor_("       / XXXXXX /`-------'") << "\n";
-		std::cout << _xor_("      / XXXXXX /") << "\n";
-		std::cout << _xor_("     / XXXXXX /") << "\n";
-		std::cout << _xor_("    (________(                ") << "\n";
-		std::cout << _xor_("     `------'") << "\n\n\n";
-		Sleep(4000);
-		std::cout << _xor_("   seems like you haven't used our cheat.  ") << "\n";
-		std::cout << _xor_("	 ") << "\n";
-		std::cout << _xor_("	 ") << "\n";
-
-
-		std::cout << _xor_("		    [beamed.win - ban log]") << "\n";
-		std::cout << _xor_("		      Banned by: BattlEye  ") << "\n";
-		std::cout << _xor_(" dir: C:\\Users\\%user%\\.be\\ac.log") << "\n";
-		std::cout << _xor_(" ") << "\n";
-		std::cout << _xor_(" account: *******@*****.*** - change epic games account ") << "\n";
-		std::cout << _xor_(" hardware id: BANNED-XXXXX (spoofing in few seconds)") << "\n";
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | FOREGROUND_GREEN);
-		Sleep(10000);
-		std::cout << _xor_(" spoofed successfully! ") << "\n";
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | FOREGROUND_RED);
-
-
-
-		std::cout << _xor_(" goto _main;") << "\n";
-		Sleep(15000);
-		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | FOREGROUND_RED | FOREGROUND_GREEN);
-
-		std::cout << xorstr("\n we're ud! enjoy playing!");
-	}
-}
-
 
 int main() {
 	auto pStartupInfo = new STARTUPINFOA();
@@ -1552,10 +1498,8 @@ int main() {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | FOREGROUND_BLUE);;
 
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | FOREGROUND_RED);
-	std::cout << xorstr(" [beamed.win - cheat] ");
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | FOREGROUND_RED);
 	Sleep(1000);
-	damoScan();
 	if (driver->Init(FALSE)) {
 		Sleep(1000);
 		driver->Attach((L"FortniteClient-Win64-Shipping.exe"));
@@ -1571,7 +1515,7 @@ int main() {
 			CloseHandle(handle);
 			SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), FOREGROUND_INTENSITY | FOREGROUND_RED);
 
-			std::cout << xorstr("\n\ninjected");
+			std::cout << ("\n\ninjected");
 
 			MainLoop();
 		}
