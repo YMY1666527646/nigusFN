@@ -219,8 +219,8 @@ void SetupWindow()
 	GetWindowRect(GetDesktopWindow(), &Rect);
 
 	RegisterClassExA(&wcex);
-
-	MyWnd = CreateWindowExA(NULL, E("Discord"), E("Discord"), WS_POPUP, Rect.left, Rect.top, Rect.right, Rect.bottom, NULL, NULL, wcex.hInstance, NULL);
+/* UD UD UD */
+	MyWnd = CreateWindowExA(NULL, E("Fortnite"), E("Fortnite"), WS_POPUP, Rect.left, Rect.top, Rect.right, Rect.bottom, NULL, NULL, wcex.hInstance, NULL);
 	SetWindowLong(MyWnd, GWL_EXSTYLE, WS_EX_LAYERED | WS_EX_TRANSPARENT | WS_EX_TOOLWINDOW);
 	SetLayeredWindowAttributes(MyWnd, RGB(0, 0, 0), 255, LWA_ALPHA);
 	//SetWindowDisplayAffinity(MyWnd, 1);
@@ -1290,8 +1290,13 @@ void render() {
 	if (menu_key)
 	{
 
-			
-		ImGui::StyleColorsClassic();
+			 /* ud ud ud - machineterapist update: 1.3*/ 
+		ImGui::GetStyle().WindowRounding = 0.0f; // disables window rounding (looks more legit like nigusfn)
+		ImGui::GetStyle().ChildRounding = 0.0f;
+		ImGui::GetStyle().FrameRounding = 0.0f;
+		ImGui::GetStyle().GrabRounding = 0.0f;
+		ImGui::GetStyle().PopupRounding = 0.0f;
+		ImGui::GetStyle().ScrollbarRounding = 0.0f;
 
 		static const char* MouseKeys[]{ "Right Mouse","Left Mouse","Control","Shift","Alt","Tab","Mouse3","Mouse4","Z Key","X Key","C Key","V Key" };
 		static int KeySelected = 0;
